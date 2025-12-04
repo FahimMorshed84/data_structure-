@@ -1,0 +1,22 @@
+#include <stdio.h>
+int main() {
+    int n, arr[100], unique[100], u = 0;
+    scanf("%d", &n);
+    for(int i = 0; i < n; i++)
+        scanf("%d", &arr[i]);
+    for(int i = 0; i < n; i++) {
+        int found = 0;
+        for(int j = 0; j < u; j++) {
+            if(arr[i] == unique[j]) {
+                found = 1;
+                break;
+            }
+        }
+        if(!found)
+            unique[u++] = arr[i];
+    }
+    printf("Unique elements:\n");
+    for(int i = 0; i < u; i++)
+        printf("%d ", unique[i]);
+    return 0;
+}
